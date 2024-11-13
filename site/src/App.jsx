@@ -9,6 +9,7 @@ import {
 } from "recharts";
 // import useSound from "use-sound";
 import chartData from "../public/london.json";
+import NumberFlow from "@number-flow/react";
 
 function broadcast(value) {
   const key = localStorage.getItem("AIO_KEY");
@@ -40,7 +41,6 @@ const scaleToRange = (value, min, max, scaledMin, scaledMax) => {
 export default function App() {
   // const [playBite] = useSound("/bite.mp3");
   // const broadcast = useBroadcastEvent();
-  const [currentLevel, setCurrentLevel] = React.useState(0);
 
   const minSpm = chartData
     .map((item) => item.spm)
@@ -48,11 +48,16 @@ export default function App() {
   const maxSpm = chartData
     .map((item) => item.spm)
     .reduce((a, b) => Math.max(a, b));
+  const lastSpm = chartData.at(-1).spm;
+
+  const [currentValue, setCurrentValue] = React.useState(lastSpm);
+  const [currentLevel, setCurrentLevel] = React.useState(lastSpm);
 
   const handleMouseMove = (state) => {
     if (state && state.activePayload && state.activePayload.length) {
       const currentValue = Number(state.activePayload[0].value);
       // map currentValue to 0-255
+      setCurrentValue(currentValue);
       const level = scaleToRange(currentValue, minSpm, maxSpm, 0, 255);
       setCurrentLevel(level);
       if (level !== currentLevel) {
@@ -76,7 +81,17 @@ export default function App() {
             fontVariantNumeric: "tabular-nums",
           }}
         >
-          {currentLevel} / 256
+          <NumberFlow
+            value={Math.round(currentValue)}
+            continuous
+            style={{
+              "--number-flow-mask-width": "4ch",
+              width: "4ch",
+              textAlign: "right",
+              justifyContent: "end",
+            }}
+          />{" "}
+          SPM
         </span>
       </div>
       {/* <ResponsiveContainer width="100%" height="100%"> */}
