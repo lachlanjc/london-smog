@@ -1,9 +1,8 @@
 import React from "react";
-import { RoomProvider, useBroadcastEvent } from "./liveblocks.config";
 import {
   ResponsiveContainer,
-  Line,
-  LineChart,
+  Area,
+  AreaChart,
   CartesianGrid,
   XAxis,
   YAxis,
@@ -11,12 +10,25 @@ import {
 // import useSound from "use-sound";
 import chartData from "../public/london.json";
 
-export default function LiveblocksProvider() {
-  return (
-    <RoomProvider id="air-quality" initialPresence={{}}>
-      <App />
-    </RoomProvider>
-  );
+function broadcast(value) {
+  const key = localStorage.getItem("AIO_KEY");
+  if (!key) return;
+  return fetch(
+    "https://io.adafruit.com/api/v2/lachlanjc/feeds/airquality/data",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-AIO-KEY": key,
+      },
+      body: JSON.stringify({ value }),
+    },
+  )
+    .then((res) => res.json())
+    .catch((err) => {
+      // console.error(err);
+      throw new Error(err);
+    });
 }
 
 const scaleToRange = (value, min, max, scaledMin, scaledMax) => {
@@ -25,9 +37,9 @@ const scaleToRange = (value, min, max, scaledMin, scaledMax) => {
   );
 };
 
-function App() {
+export default function App() {
   // const [playBite] = useSound("/bite.mp3");
-  const broadcast = useBroadcastEvent();
+  // const broadcast = useBroadcastEvent();
   const [currentLevel, setCurrentLevel] = React.useState(0);
 
   const minSpm = chartData
@@ -52,24 +64,55 @@ function App() {
 
   return (
     <>
+      <div>
+        <span
+          style={{
+            color: "white",
+            fontWeight: "bold",
+            fontSize: "3rem",
+            textAlign: "center",
+            display: "block",
+            marginBottom: "1rem",
+            fontVariantNumeric: "tabular-nums",
+          }}
+        >
+          {currentLevel} / 256
+        </span>
+      </div>
       {/* <ResponsiveContainer width="100%" height="100%"> */}
-      <LineChart
+      <AreaChart
         width={768}
         height={512}
         data={chartData}
         onMouseMove={handleMouseMove}
       >
+        <defs>
+          <linearGradient id="fillOrange" x1="0" y1="0" x2="0" y2="1">
+            <stop
+              offset="5%"
+              stopColor="var(--color-orange)"
+              stopOpacity={0.8}
+            />
+            <stop
+              offset="95%"
+              stopColor="var(--color-orange)"
+              stopOpacity={0.1}
+            />
+          </linearGradient>
+        </defs>
         <CartesianGrid horizontal={false} />
-        <XAxis dataKey="year" axisLine={false} tickMargin={8} />
+        <XAxis dataKey="year" axisLine={false} tickCount={4} />
         <YAxis domain={[0, maxSpm]} />
-        <Line
+        <Area
           type="monotone"
           dataKey="spm"
-          stroke="#8884d8"
-          dot={false}
+          stroke="var(--color-orange)"
           strokeWidth={2}
+          fill="url(#fillOrange)"
+          // fillOpacity={0.4}
+          dot={false}
         />
-      </LineChart>
+      </AreaChart>
       {/* </ResponsiveContainer> */}
     </>
   );

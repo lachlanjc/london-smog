@@ -1,8 +1,60 @@
+@font-face {
+  font-family: GeistSans;
+  src: url(https://flareup.vercel.app/_next/static/media/4f117ec02fc103f8-s.p.woff2)
+    format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: __GeistSans_Fallback_343187;
+  src: local("Arial");
+  ascent-override: 90.51%;
+  descent-override: 21.64%;
+  line-gap-override: 9.84%;
+  size-adjust: 101.65%;
+}
+
+.font-sans {
+  font-family: GeistSans, __GeistSans_Fallback_343187;
+}
+
+@font-face {
+  font-family: GeistMono;
+  src: url(https://flareup.vercel.app/_next/static/media/414fe043d41639e8.p.woff2)
+    format("woff2");
+  font-display: swap;
+}
+
+.font-mono {
+  font-family:
+    GeistMono,
+    ui-monospace,
+    SFMono-Regular,
+    Roboto Mono,
+    Menlo,
+    Monaco,
+    Liberation Mono,
+    DejaVu Sans Mono,
+    Courier New,
+    monospace;
+}
+
+:root {
+  --font-geist-sans: "GeistSans", "__GeistSans_Fallback_343187";
+  --font-geist-mono: "GeistMono", ui-monospace, SFMono-Regular, Roboto Mono,
+    Menlo, Monaco, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
+  --color-red: #ff4921;
+  --color-orange: #f56900;
+}
+
 body {
-  font-family: system-ui, sans-serif;
+  font-family: var(--font-geist-sans);
   font-size: 16px;
   line-height: 1.5;
   min-height: 100dvh;
   margin: 0;
   width: 100%;
+  background-color: #000;
+  display: grid;
+  place-content: center;
 }
