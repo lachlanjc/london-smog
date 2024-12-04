@@ -25,6 +25,14 @@ TK
 
 <object data="/datasheets/valve.pdf" width="100%" height="512"></object>
 
+### Air valve transistor
+
+<object data="/datasheets/TIP102.pdf" width="100%" height="512"></object>
+
+### Voltage regulator
+
+<object data="/datasheets/LM7805.pdf" width="100%" height="512"></object>
+
 ## Photos
 
 TK

@@ -1,5 +1,5 @@
 {
-  "name": "web-haptics",
+  "name": "air-quality",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,8 +9,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@liveblocks/client": "^1.10.0",
-    "@liveblocks/react": "^1.10.0",
     "@number-flow/react": "^0.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
