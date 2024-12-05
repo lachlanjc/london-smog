@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 @font-face {
   font-family: GeistSans;
   src: url(https://flareup.vercel.app/_next/static/media/4f117ec02fc103f8-s.p.woff2)
@@ -47,6 +49,28 @@
   --color-orange: #f56900;
 }
 
+@theme {
+  --font-display: "Satoshi", "sans-serif";
+
+  --font-geist-sans: "GeistSans", "__GeistSans_Fallback_343187";
+  --font-geist-mono: "GeistMono", ui-monospace, SFMono-Regular, Roboto Mono,
+    Menlo, Monaco, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
+  --color-accent: #f56900;
+  --color-accent2: #ff4921;
+
+  --color-avocado-100: oklch(0.99 0 0);
+  --color-avocado-200: oklch(0.98 0.04 113.22);
+  --color-avocado-300: oklch(0.94 0.11 115.03);
+  --color-avocado-400: oklch(0.92 0.19 114.08);
+  --color-avocado-500: oklch(0.84 0.18 117.33);
+  --color-avocado-600: oklch(0.53 0.12 118.34);
+
+  --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
+  --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
+
+  /* ... */
+}
+
 body {
   font-family: var(--font-geist-sans);
   font-size: 16px;
@@ -55,6 +79,27 @@ body {
   margin: 0;
   width: 100%;
   background-color: #000;
+  color: #fff;
   display: grid;
   place-content: center;
+}
+
+.intro p {
+  max-width: 38ch;
+}
+
+.intro code {
+  white-space: nowrap;
+}
+
+.intro strong {
+  color: var(--color-orange);
+  font-weight: 650;
+}
+
+h1 {
+  -webkit-text-fill-color: #dadada;
+  -webkit-text-stroke-width: 5px;
+  -webkit-text-stroke-color: currentColor;
+  paint-order: stroke fill;
 }

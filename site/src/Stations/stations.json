@@ -1,0 +1,19 @@
+[
+{"name":"Edmonton EcoPark","lat":"51.6158","lng":"-0.0414","type":"Waste","mw":"","opened":"1971","closed":"","demolished":""},
+{"name":"Fulham","lat":"51.4697750","lng":"-0.1833444﻿","type":"Coal","mw":"310","opened":"1901","closed":"1978","demolished":"1980s"},
+{"name":"Holborn Viaduct","lat":"51.5171972","lng":"-0.1050694﻿","type":"Coal","mw":"0.093","opened":"1882","closed":"1886","demolished":"1886"},
+{"name":"Hounslow","lat":"51.4694444","lng":"-0.3506305","type":"Coal, Diesel","mw":"4.15","opened":"1904","closed":"1964","demolished":"yes"},
+{"name":"Shorts Gardens","lat":"51.5152549","lng":"-0.1241973","type":"Diesel Engines","mw":"2.8","opened":"1896","closed":"1962","demolished":""},
+{"name":"Stepney","lat":"51.5094972","lng":"-0.034472","type":"Coal","mw":"small","opened":"1907","closed":"1972","demolished":"yes"},
+{"name":"Taylors Lane","lat":"51.5461667","lng":"-0.2575222","type":"Coal","mw":"28.6","opened":"1903","closed":"1972","demolished":"?"},
+{"name":"Wandsworth","lat":"51.4611111","lng":"-0.1970193","type":"Coal","mw":"22","opened":"1897","closed":"1965","demolished":"yes"},
+{"name":"West Ham","lat":"51.5181083","lng":"0.0013722﻿","type":"Coal","mw":"114","opened":"1904","closed":"1983","demolished":"Yes"},
+{"name":"Woolwich","lat":"51.49449917","lng":"0.06581472","type":"Coal","mw":"57","opened":"1893","closed":"1978","demolished":"1979"},
+{"name":"Deptford East","lat":"51.4825500","lng":"-0.0203056","type":"Coal","mw":"0.8","opened":"1891","closed":"1957","demolished":"yes"},
+{"name":"Deptford West","lat":"51.4825500","lng":"-0.0203056","type":"Coal","mw":"158","opened":"1929","closed":"1983","demolished":"1992"},
+{"name":"Greenwich","lat":"51.4850722","lng":"-0.0009389","type":"Oil, Gas","mw":"117.6","opened":"1902","closed":"","demolished":""},
+{"name":"Kingston","lat":"51.4153389","lng":"-0.3061333","type":"Coal","mw":"117","opened":"1893","closed":"1980","demolished":"Yes"},
+{"name":"Neasden","lat":"51.5597667","lng":"-0.2614028","type":"Coal","mw":"?","opened":"1904","closed":"1968","demolished":"?"},
+{"name":"Wimbledon","lat":"51.4311111","lng":"-0.1950749","type":"Coal","mw":"24.2","opened":"1899","closed":"1968","demolished":"yes"},
+{"name":"Enfield","lat":"51.6628306","lng":"-0.0227972﻿","type":"Oil, Gas","mw":"392","opened":"1999","closed":"","demolished":""}
+]

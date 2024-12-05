@@ -1,16 +1,14 @@
 import React from "react";
-import {
-  ResponsiveContainer,
-  Area,
-  AreaChart,
-  CartesianGrid,
-  XAxis,
-  YAxis,
-} from "recharts";
+
 // import useSound from "use-sound";
-import chartData from "../public/london.json";
-import NumberFlow from "@number-flow/react";
-import Coal from "./Coal";
+import Air from "./Air/Air";
+import Intro from "./Intro/Intro";
+import Coal from "./Coal/Intro";
+import Closure from "./Closure/Closure";
+import Solutions from "./Solutions/Solutions";
+import Stations from "./Stations/Stations";
+import Congestion from "./Congestion/Congestion";
+import Smog from "./Smog/Smog";
 
 function broadcast(value) {
   const key = localStorage.getItem("AIO_KEY");
@@ -33,104 +31,47 @@ function broadcast(value) {
     });
 }
 
-const scaleToRange = (value, min, max, scaledMin, scaledMax) => {
-  return Math.round(
-    ((value - min) / (max - min)) * (scaledMax - scaledMin) + scaledMin,
+function Button({ onClick, children }) {
+  return (
+    <button
+      className="border-2 border-accent cursor-pointer rounded-full font-semibold py-3 px-6 text-lg text-accent flex items-center gap-3 hover:brightness-125 transition-[filter]"
+      onClick={onClick}
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 448 512"
+        width="20"
+        height="20"
+        fill="currentColor"
+        aria-hidden
+      >
+        <path d="M128 40c0-22.1 17.9-40 40-40s40 17.9 40 40l0 148.2c8.5-7.6 19.7-12.2 32-12.2c20.6 0 38.2 13 45 31.2c8.8-9.3 21.2-15.2 35-15.2c25.3 0 46 19.5 47.9 44.3c8.5-7.7 19.8-12.3 32.1-12.3c26.5 0 48 21.5 48 48l0 48 0 16 0 48c0 70.7-57.3 128-128 128l-16 0-64 0-.1 0-5.2 0c-5 0-9.9-.3-14.7-1c-55.3-5.6-106.2-34-140-79L8 336c-13.3-17.7-9.7-42.7 8-56s42.7-9.7 56 8l56 74.7L128 40zM240 304c0-8.8-7.2-16-16-16s-16 7.2-16 16l0 96c0 8.8 7.2 16 16 16s16-7.2 16-16l0-96zm48-16c-8.8 0-16 7.2-16 16l0 96c0 8.8 7.2 16 16 16s16-7.2 16-16l0-96c0-8.8-7.2-16-16-16zm80 16c0-8.8-7.2-16-16-16s-16 7.2-16 16l0 96c0 8.8 7.2 16 16 16s16-7.2 16-16l0-96z" />
+      </svg>
+      {children}
+    </button>
   );
-};
-
+}
 export default function App() {
   // const [playBite] = useSound("/bite.mp3");
   // const broadcast = useBroadcastEvent();
 
-  const minSpm = chartData
-    .map((item) => item.spm)
-    .reduce((a, b) => Math.min(a, b));
-  const maxSpm = chartData
-    .map((item) => item.spm)
-    .reduce((a, b) => Math.max(a, b));
-  const lastSpm = chartData.at(-1).spm;
-
-  const [currentValue, setCurrentValue] = React.useState(lastSpm);
-  const [currentLevel, setCurrentLevel] = React.useState(lastSpm);
-
-  const handleMouseMove = (state) => {
-    if (state && state.activePayload && state.activePayload.length) {
-      const currentValue = Number(state.activePayload[0].value);
-      // map currentValue to 0-255
-      setCurrentValue(currentValue);
-      const level = scaleToRange(currentValue, minSpm, maxSpm, 0, 255);
-      setCurrentLevel(level);
-      if (level !== currentLevel) {
-        broadcast(level);
-        console.log(level);
-      }
-    }
-  };
-
   return (
     <>
-      <div>
-        <span
-          style={{
-            color: "white",
-            fontWeight: "bold",
-            fontSize: "3rem",
-            textAlign: "center",
-            display: "block",
-            marginBottom: "1rem",
-            fontVariantNumeric: "tabular-nums",
-          }}
-        >
-          <NumberFlow
-            value={Math.round(currentValue)}
-            continuous
-            style={{
-              "--number-flow-mask-width": "4ch",
-              width: "4ch",
-              textAlign: "right",
-              justifyContent: "end",
-            }}
-          />{" "}
-          SPM
-        </span>
+      {/* <Map /> */}
+      <Intro />
+      <div className="-mt-12 -mb-12 container mx-auto relative z-1">
+        <Button onClick={() => broadcast(0)}>Experience it firsthand</Button>
       </div>
-      {/* <ResponsiveContainer width="100%" height="100%"> */}
-      <AreaChart
-        width={768}
-        height={512}
-        data={chartData}
-        onMouseMove={handleMouseMove}
-      >
-        <defs>
-          <linearGradient id="fillOrange" x1="0" y1="0" x2="0" y2="1">
-            <stop
-              offset="5%"
-              stopColor="var(--color-orange)"
-              stopOpacity={0.8}
-            />
-            <stop
-              offset="95%"
-              stopColor="var(--color-orange)"
-              stopOpacity={0.1}
-            />
-          </linearGradient>
-        </defs>
-        <CartesianGrid horizontal={false} />
-        <XAxis dataKey="year" axisLine={false} tickCount={4} />
-        <YAxis domain={[0, maxSpm]} />
-        <Area
-          type="monotone"
-          dataKey="spm"
-          stroke="var(--color-orange)"
-          strokeWidth={2}
-          fill="url(#fillOrange)"
-          // fillOpacity={0.4}
-          dot={false}
-        />
-      </AreaChart>
-      {/* </ResponsiveContainer> */}
+      <Air />
       <Coal />
+      <Stations />
+      <Smog />
+      <div className="mt-8 -mb-12 container mx-auto relative z-1">
+        <Button onClick={() => broadcast(1)}>Experience the improvement</Button>
+      </div>
+      <Solutions />
+      <Closure />
+      <Congestion />
     </>
   );
 }
