@@ -1,5 +1,4 @@
 // Source https://heritagecalling.com/2022/12/01/the-great-smog-of-london-1952/
-import hero from "../air/rooftops.webp";
 import pedestrians from "./pedestrians.webp";
 import parliament from "./parliament.webp";
 
