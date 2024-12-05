@@ -60,14 +60,14 @@ export default function App() {
       {/* <Map /> */}
       <Intro />
       <div className="-mt-12 -mb-12 container mx-auto relative z-1">
-        <Button onClick={() => broadcast(0)}>Experience it firsthand</Button>
+        <Button onClick={() => broadcast(1)}>Experience it firsthand</Button>
       </div>
       <Air />
       <Coal />
       <Stations />
       <Smog />
       <div className="mt-8 -mb-12 container mx-auto relative z-1">
-        <Button onClick={() => broadcast(1)}>Experience the improvement</Button>
+        <Button onClick={() => broadcast(2)}>Experience the improvement</Button>
       </div>
       <Solutions />
       <Closure />

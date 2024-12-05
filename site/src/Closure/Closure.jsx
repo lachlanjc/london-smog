@@ -17,16 +17,8 @@ export default function Closure() {
         width={3800}
         height={2282}
       />
-      <article className="intro container mx-auto flex flex-col gap-10 py-24 text-3xl leading-10 tracking-tight text-white">
-        <p>
-          In October, the final coal-fired power station in the UK closed its
-          doors. The UK was the first country to industrialize, and coal has
-          been a key part of the country’s energy mix for over 200 years. The
-          closure clears the air on a long history.
-        </p>
-      </article>
-      <div className="container mx-auto pb-48">
-        <p className="flex items-center gap-3 font-mono opacity-50 mb-6">
+      <article className="intro container mx-auto flex flex-col pt-24 pb-16 text-3xl leading-10 tracking-tight text-white">
+        <p className="flex items-center gap-3 font-mono text-lg opacity-50 mb-6">
           <svg
             width={24}
             height={24}
@@ -38,12 +30,20 @@ export default function Closure() {
             <title>Pin</title>
             <path
               d={`M20.2,15.7L20.2,15.7c1.1-1.6,1.8-3.6,1.8-5.7c0-5.6-4.5-10-10-10S2,4.5,2,10c0,2,0.6,3.9,1.6,5.4c0,0.1,0.1,0.2,0.2,0.3
-c0,0,0.1,0.1,0.1,0.2c0.2,0.3,0.4,0.6,0.7,0.9c2.6,3.1,7.4,7.6,7.4,7.6s4.8-4.5,7.4-7.5c0.2-0.3,0.5-0.6,0.7-0.9
-C20.1,15.8,20.2,15.8,20.2,15.7z`}
+        c0,0,0.1,0.1,0.1,0.2c0.2,0.3,0.4,0.6,0.7,0.9c2.6,3.1,7.4,7.6,7.4,7.6s4.8-4.5,7.4-7.5c0.2-0.3,0.5-0.6,0.7-0.9
+        C20.1,15.8,20.2,15.8,20.2,15.7z`}
             />
           </svg>
           Nottinghamshire, England
         </p>
+        <p>
+          In October, the final coal-fired power station in the UK closed its
+          doors. The UK was the first country to industrialize, and coal has
+          been a key part of the country’s energy mix for over 200 years. The
+          closure clears the air on a long history.
+        </p>
+      </article>
+      <div className="container mx-auto pb-48">
         <div className="grid md:grid-cols-2 gap-12">
           <img
             src={truck}
