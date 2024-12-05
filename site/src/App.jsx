@@ -10,6 +10,7 @@ import {
 // import useSound from "use-sound";
 import chartData from "../public/london.json";
 import NumberFlow from "@number-flow/react";
+import Coal from "./Coal";
 
 function broadcast(value) {
   const key = localStorage.getItem("AIO_KEY");
@@ -129,6 +130,7 @@ export default function App() {
         />
       </AreaChart>
       {/* </ResponsiveContainer> */}
+      <Coal />
     </>
   );
 }
