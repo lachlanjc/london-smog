@@ -4,7 +4,10 @@ export default function Solutions() {
   return (
     <section className="max-w-screen relative">
       <article className="intro container mx-auto flex flex-col justify-start gap-10 py-24 text-3xl leading-10 tracking-tight text-white">
-        <p>2 primary forces improved the air quality:</p>
+        <p>
+          Air pollution levels in London today are almost 40-times lower than
+          their peak. 2 primary forces improved the air quality:
+        </p>
         {/* <p>
           <strong>1. Dispersal:</strong> As the train network around London
           grew, people were able to work in the city but live in the suburbs,

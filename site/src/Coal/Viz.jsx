@@ -50,6 +50,7 @@ export default function CoalViz() {
         dataKey="consumption"
         name="Million tonnes of coal consumed"
         stroke="#82ca9d"
+        strokeWidth={2}
         dot={false}
       />
     </LineChart>
