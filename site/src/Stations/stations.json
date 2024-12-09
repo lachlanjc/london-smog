@@ -1,19 +1,322 @@
 [
-{"name":"Edmonton EcoPark","lat":"51.6158","lng":"-0.0414","type":"Waste","mw":"","opened":"1971","closed":"","demolished":""},
-{"name":"Fulham","lat":"51.4697750","lng":"-0.1833444﻿","type":"Coal","mw":"310","opened":"1901","closed":"1978","demolished":"1980s"},
-{"name":"Holborn Viaduct","lat":"51.5171972","lng":"-0.1050694﻿","type":"Coal","mw":"0.093","opened":"1882","closed":"1886","demolished":"1886"},
-{"name":"Hounslow","lat":"51.4694444","lng":"-0.3506305","type":"Coal, Diesel","mw":"4.15","opened":"1904","closed":"1964","demolished":"yes"},
-{"name":"Shorts Gardens","lat":"51.5152549","lng":"-0.1241973","type":"Diesel Engines","mw":"2.8","opened":"1896","closed":"1962","demolished":""},
-{"name":"Stepney","lat":"51.5094972","lng":"-0.034472","type":"Coal","mw":"small","opened":"1907","closed":"1972","demolished":"yes"},
-{"name":"Taylors Lane","lat":"51.5461667","lng":"-0.2575222","type":"Coal","mw":"28.6","opened":"1903","closed":"1972","demolished":"?"},
-{"name":"Wandsworth","lat":"51.4611111","lng":"-0.1970193","type":"Coal","mw":"22","opened":"1897","closed":"1965","demolished":"yes"},
-{"name":"West Ham","lat":"51.5181083","lng":"0.0013722﻿","type":"Coal","mw":"114","opened":"1904","closed":"1983","demolished":"Yes"},
-{"name":"Woolwich","lat":"51.49449917","lng":"0.06581472","type":"Coal","mw":"57","opened":"1893","closed":"1978","demolished":"1979"},
-{"name":"Deptford East","lat":"51.4825500","lng":"-0.0203056","type":"Coal","mw":"0.8","opened":"1891","closed":"1957","demolished":"yes"},
-{"name":"Deptford West","lat":"51.4825500","lng":"-0.0203056","type":"Coal","mw":"158","opened":"1929","closed":"1983","demolished":"1992"},
-{"name":"Greenwich","lat":"51.4850722","lng":"-0.0009389","type":"Oil, Gas","mw":"117.6","opened":"1902","closed":"","demolished":""},
-{"name":"Kingston","lat":"51.4153389","lng":"-0.3061333","type":"Coal","mw":"117","opened":"1893","closed":"1980","demolished":"Yes"},
-{"name":"Neasden","lat":"51.5597667","lng":"-0.2614028","type":"Coal","mw":"?","opened":"1904","closed":"1968","demolished":"?"},
-{"name":"Wimbledon","lat":"51.4311111","lng":"-0.1950749","type":"Coal","mw":"24.2","opened":"1899","closed":"1968","demolished":"yes"},
-{"name":"Enfield","lat":"51.6628306","lng":"-0.0227972﻿","type":"Oil, Gas","mw":"392","opened":"1999","closed":"","demolished":""}
+  {
+    "name": "Edmonton EcoPark",
+    "lat": "51.6158",
+    "lng": "-0.0414",
+    "type": "Waste",
+    "mw": "55",
+    "opened": "1971",
+    "closed": "",
+    "demolished": ""
+  },
+  {
+    "name": "Fulham",
+    "lat": "51.4697750",
+    "lng": "-0.1833444﻿",
+    "type": "Coal",
+    "mw": "310",
+    "opened": "1901",
+    "closed": "1978",
+    "demolished": "1980s"
+  },
+  {
+    "name": "Holborn Viaduct",
+    "lat": "51.5171972",
+    "lng": "-0.1050694﻿",
+    "type": "Coal",
+    "mw": "0.093",
+    "opened": "1882",
+    "closed": "1886",
+    "demolished": "1886"
+  },
+  {
+    "name": "Hounslow",
+    "lat": "51.4694444",
+    "lng": "-0.3506305",
+    "type": "Coal",
+    "mw": "4.15",
+    "opened": "1904",
+    "closed": "1964",
+    "demolished": "Yes"
+  },
+  {
+    "name": "Shorts Gardens",
+    "lat": "51.5152549",
+    "lng": "-0.1241973",
+    "type": "Diesel",
+    "mw": "2.8",
+    "opened": "1896",
+    "closed": "1962",
+    "demolished": ""
+  },
+  {
+    "name": "Stepney",
+    "lat": "51.5094972",
+    "lng": "-0.034472",
+    "type": "Coal",
+    "mw": "small",
+    "opened": "1907",
+    "closed": "1972",
+    "demolished": "yes"
+  },
+  {
+    "name": "Taylors Lane 1",
+    "lat": "51.5461667",
+    "lng": "-0.2575222",
+    "type": "Coal",
+    "mw": "28.6",
+    "opened": "1903",
+    "closed": "1972",
+    "demolished": "Converted"
+  },
+  {
+    "name": "Taylors Lane 2",
+    "lat": "51.5461667",
+    "lng": "-0.2575222",
+    "type": "Gas",
+    "mw": "132",
+    "opened": "1979",
+    "closed": "",
+    "demolished": ""
+  },
+  {
+    "name": "Wandsworth",
+    "lat": "51.4611111",
+    "lng": "-0.1970193",
+    "type": "Coal",
+    "mw": "22",
+    "opened": "1897",
+    "closed": "1965",
+    "demolished": "yes"
+  },
+  {
+    "name": "West Ham",
+    "lat": "51.5181083",
+    "lng": "0.0013722﻿",
+    "type": "Coal",
+    "mw": "114",
+    "opened": "1904",
+    "closed": "1983",
+    "demolished": "Yes"
+  },
+  {
+    "name": "Woolwich",
+    "lat": "51.49449917",
+    "lng": "0.06581472",
+    "type": "Coal",
+    "mw": "57",
+    "opened": "1893",
+    "closed": "1978",
+    "demolished": "1979"
+  },
+  {
+    "name": "Hackney",
+    "lat": "51.5566",
+    "lng": "-0.0515",
+    "type": "Coal",
+    "mw": "92",
+    "opened": "1901",
+    "closed": "1976",
+    "demolished": "Yes"
+  },
+  {
+    "name": "Deptford East",
+    "lat": "51.4825500",
+    "lng": "-0.0203056",
+    "type": "Coal",
+    "mw": "0.8",
+    "opened": "1891",
+    "closed": "1957",
+    "demolished": "yes"
+  },
+  {
+    "name": "Deptford West",
+    "lat": "51.4825500",
+    "lng": "-0.0203056",
+    "type": "Coal",
+    "mw": "158",
+    "opened": "1929",
+    "closed": "1983",
+    "demolished": "1992"
+  },
+  {
+    "name": "Greenwich",
+    "lat": "51.4850722",
+    "lng": "-0.0009389",
+    "type": "Gas",
+    "mw": "117.6",
+    "opened": "1902",
+    "closed": "",
+    "demolished": ""
+  },
+  {
+    "name": "Kingston",
+    "lat": "51.4153389",
+    "lng": "-0.3061333",
+    "type": "Coal",
+    "mw": "117",
+    "opened": "1893",
+    "closed": "1980",
+    "demolished": "Yes"
+  },
+  {
+    "name": "Neasden",
+    "lat": "51.5597667",
+    "lng": "-0.2614028",
+    "type": "Coal",
+    "mw": "89.7",
+    "opened": "1904",
+    "closed": "1968",
+    "demolished": "?"
+  },
+  {
+    "name": "Wimbledon",
+    "lat": "51.4311111",
+    "lng": "-0.1950749",
+    "type": "Coal",
+    "mw": "24.2",
+    "opened": "1899",
+    "closed": "1968",
+    "demolished": "yes"
+  },
+  {
+    "name": "Enfield",
+    "lat": "51.6628306",
+    "lng": "-0.0227972﻿",
+    "type": "Gas",
+    "mw": "392",
+    "opened": "1999",
+    "closed": "",
+    "demolished": ""
+  },
+  {
+    "name": "Battersea",
+    "lat": "51.4820203",
+    "lng": "-0.1470656",
+    "type": "Coal",
+    "mw": "503",
+    "opened": "1933",
+    "closed": "1975",
+    "demolished": "No (redeveloped commercially)"
+  },
+  {
+    "name": "Bankside",
+    "lat": "51.5075",
+    "lng": "-0.0997",
+    "type": "Coal",
+    "mw": "89",
+    "opened": "1891",
+    "closed": "1981",
+    "demolished": "No (converted to Tate Modern)"
+  },
+  {
+    "name": "Barking",
+    "lat": "51.5245",
+    "lng": "0.0925",
+    "type": "Coal",
+    "mw": "303",
+    "opened": "1925",
+    "closed": "1981",
+    "demolished": "1980s"
+  },
+  {
+    "name": "Belvedere",
+    "lat": "51.4906",
+    "lng": "0.1611",
+    "type": "Oil",
+    "mw": "480",
+    "opened": "1960",
+    "closed": "1986",
+    "demolished": "1994"
+  },
+  {
+    "name": "Croydon",
+    "lat": "51.3737",
+    "lng": "-0.0996",
+    "type": "Coal",
+    "mw": "58",
+    "opened": "1896",
+    "closed": "1984",
+    "demolished": "Yes"
+  },
+  {
+    "name": "Barnes",
+    "lat": "51.4687",
+    "lng": "-0.2514",
+    "type": "Coal",
+    "mw": "6",
+    "opened": "1901",
+    "closed": "1959",
+    "demolished": "Redeveloped in 1980s"
+  },
+  {
+    "name": "Gravesend",
+    "lat": "51.4417",
+    "lng": "0.3669",
+    "type": "Coal",
+    "mw": "12",
+    "opened": "1900",
+    "closed": "1970",
+    "demolished": "1995"
+  },
+  {
+    "name": "Blackwall",
+    "lat": "51.497800",
+    "lng": "0.011500",
+    "type": "Coal",
+    "mw": "100.5",
+    "opened": "1900",
+    "closed": "1984",
+    "demolished": "1987"
+  },
+  {
+    "name": "Brimsdown",
+    "lat": "51.661",
+    "lng": "-0.022",
+    "type": "Coal",
+    "mw": "6",
+    "opened": "1907",
+    "closed": "1976",
+    "demolished": "1980"
+  },
+  {
+    "name": "Brunswick Wharf",
+    "lat": "51.5081",
+    "lng": "0.0010",
+    "type": "Coal",
+    "mw": "340",
+    "opened": "1952",
+    "closed": "1984",
+    "demolished": "1989"
+  },
+  {
+    "name": "Bulls Bridge",
+    "lat": "51.50200",
+    "lng": "-0.40900",
+    "type": "Gas",
+    "mw": "280",
+    "opened": "1981",
+    "closed": "1993",
+    "demolished": "Yes"
+  },
+  {
+    "name": "Bow",
+    "lat": "51.5341667",
+    "lng": "-0.0119444",
+    "type": "Coal",
+    "mw": "30.5",
+    "opened": "1903",
+    "closed": "1936",
+    "demolished": ""
+  },
+  {
+    "name": "Acton Lane",
+    "lat": "51.5305",
+    "lng": "-0.2559",
+    "type": "Coal",
+    "mw": "150",
+    "opened": "1899",
+    "closed": "1983",
+    "demolished": "Redeveloped in 1980s"
+  }
 ]
