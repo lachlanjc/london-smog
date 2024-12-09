@@ -34,14 +34,14 @@ function broadcast(value) {
 function Button({ onClick, children }) {
   return (
     <button
-      className="border-2 border-accent cursor-pointer rounded-full font-semibold py-3 px-6 text-lg text-accent flex items-center gap-3 hover:brightness-125 transition-[filter]"
+      className="bg-accent cursor-pointer rounded-full font-semibold py-6 px-12 text-4xl text-white flex items-center gap-4 hover:brightness-125 transition-[filter]"
       onClick={onClick}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 448 512"
-        width="20"
-        height="20"
+        width="32"
+        height="32"
         fill="currentColor"
         aria-hidden
       >

@@ -99,8 +99,8 @@ body {
 }
 
 h1 {
-  -webkit-text-fill-color: #dadada;
+  -webkit-text-fill-color: currentColor;
   -webkit-text-stroke-width: 5px;
-  -webkit-text-stroke-color: currentColor;
+  -webkit-text-stroke-color: hsl(0 0% 100% / 0.125);
   paint-order: stroke fill;
 }
