@@ -106,7 +106,7 @@ h1 {
 }
 
 .browser {
-  width: 80vw;
+  width: 100vw;
   aspect-ratio: 16 / 9;
   background: #000;
   border-radius: 12px;

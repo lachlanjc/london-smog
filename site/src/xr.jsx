@@ -19,7 +19,6 @@ const store = createXRStore();
 function XRApp() {
   return (
     <>
-      <button onClick={() => store.enterAR()}>Enter AR</button>
       <Canvas>
         <XR store={store}>
           <pointLight position={[10, 10, 10]} intensity={1.5} />
@@ -32,6 +31,12 @@ function XRApp() {
           </Suspense>
         </XR>
       </Canvas>
+      <button
+        onClick={() => store.enterVR()}
+        className="absolute top-2 left-2 z-2"
+      >
+        Enter VR
+      </button>
     </>
   );
 }
