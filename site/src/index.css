@@ -104,3 +104,17 @@ h1 {
   -webkit-text-stroke-color: hsl(0 0% 100% / 0.125);
   paint-order: stroke fill;
 }
+
+.browser {
+  width: 80vw;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 12px;
+  overflow-y: auto;
+  padding: 0;
+}
+
+#root > div {
+  position: absolute !important;
+  inset: 0;
+}
