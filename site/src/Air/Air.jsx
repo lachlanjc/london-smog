@@ -17,7 +17,7 @@ export default function Air() {
           suspended in Earth’s atmosphere (such as soot, smoke, dust, and
           pollen). Exposure to SPM – especially very small particles, which
           infiltrate the respiratory system – has been strongly linked to
-          negative cardiorespiratory health impacts, and even premature death.
+          negative health impacts and premature death.
         </p>
       </article>
       <div className="container mx-auto">

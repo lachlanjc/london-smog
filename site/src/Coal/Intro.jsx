@@ -1,18 +1,22 @@
 import thomas from "./thomas.webp";
-import Viz from "./Viz";
+// Source: https://www.ncm.org.uk/whats-on/the-hidden-lives-of-the-coal-traders/
+import boats from "./boats.webp";
+import rooftops from "./rooftops.webp";
+// import Viz from "./Viz";
 
 export default function Coal() {
   return (
     <section className="max-w-screen relative py-24">
-      <article className="intro container mx-auto flex flex-col justify-start gap-10 relative">
-        <div className="contents text-3xl leading-10 tracking-tight text-white">
+      <article className="intro container mx-auto relative">
+        <div className="grid grid-cols-[auto_1fr] gap-10 text-3xl leading-10 tracking-tight text-white">
           <p>
             London’s air quality from 1700 onwards worsened every decade: SPM
-            doubled in nearly two centuries. The central reason for this
-            decline? <strong>Coal.</strong>
+            doubled in nearly two centuries. The central cause of this
+            pollution? <strong>Coal.</strong>
           </p>
+          <div />
           <p>
-            Britain began mining coal in the Roman empire, to heat baths and
+            Britain has mined coal since the Roman empire, to heat baths and
             smelt iron, but primarily burned wood for energy. As the country ran
             out of forests, in 1712, Thomas Savery invented the first steam
             engine to (inefficiently) pump water out of coal mines, accelerating
@@ -23,13 +27,20 @@ export default function Coal() {
             alt="Thomas Savery"
             width={768 / 2}
             height={492 / 2}
-            className="md:absolute right-0 md:top-36"
+            className="w-full"
           />
           <p>
             In 1769, James Watt improved and patented the steam engine. In 1882,
             the first coal-fired power station was built in London, followed by
-            a national grid.
+            a national grid. Barges of coal came streaming up the Thames.
           </p>
+          <img
+            src={boats}
+            alt="Boats"
+            width={1920 / 4}
+            height={1080 / 4}
+            className="w-full"
+          />
           <p>
             These steps kicked off the Industrial Revolution, which transformed
             Britain from a rural society into an urban one. Every household that
@@ -38,9 +49,18 @@ export default function Coal() {
             everywhere. Thick, toxic <strong>air pollution</strong> enveloped
             London and its inhabitants.
           </p>
+          <img
+            src={rooftops}
+            alt="Rooftops"
+            width={1802}
+            height={1200}
+            className="w-full"
+          />
         </div>
-        <Viz />
       </article>
+      {/* <div className="mx-auto mt-12 w-3xl">
+        <Viz />
+      </div> */}
     </section>
   );
 }

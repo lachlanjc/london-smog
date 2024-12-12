@@ -18,6 +18,17 @@ export default function Solutions() {
           electricity generation from coal to fossil gas, which burns cleaner,
           plus renewable energy sources like wind and solar.
         </p>
+        <iframe
+          src="https://ourworldindata.org/grapher/coal-output-uk-tonnes?tab=chart"
+          loading="lazy"
+          style={{
+            width: "100%",
+            height: 600,
+            border: "none",
+            filter: "invert(1) hue-rotate(180deg)",
+          }}
+          allow="web-share; clipboard-write"
+        />
         <p>
           <strong>2. Policy:</strong> The London government set fines for
           polluters, and more recently targets to reduce greenhouse gas
