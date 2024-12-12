@@ -60,6 +60,7 @@ function Slide({ index, setSlide, children }) {
       if (inView) {
         console.log(index);
         setSlide(index);
+        broadcast(index);
       }
     },
   });
@@ -80,10 +81,6 @@ const numSlides = 8;
 export default function App() {
   const [activeSlide, setActiveSlide] = useState(1);
   // const [playBite] = useSound("/bite.mp3");
-
-  useEffect(() => {
-    broadcast(activeSlide);
-  }, [activeSlide]);
 
   return (
     <div className="flex w-[900vw]">
