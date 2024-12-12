@@ -47,6 +47,7 @@ export default function Solutions() {
             webkitAllowFullscreen
             mozAllowFullscreen
             allowFullscreen
+            loading="lazy"
           />
         </details>
       </article>

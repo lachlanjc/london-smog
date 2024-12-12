@@ -54,10 +54,11 @@ function Button({ onClick, children }) {
 }
 
 function Slide({ index, setSlide, children }) {
-  const { ref, inView } = useInView({
+  const { ref } = useInView({
     threshold: 1,
     onChange: (inView) => {
       if (inView) {
+        console.log(index);
         setSlide(index);
       }
     },
