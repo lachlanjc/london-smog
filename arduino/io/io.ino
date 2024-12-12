@@ -2,12 +2,12 @@
 
 AdafruitIO_Feed *relay = io.feed("airquality");
 
-const int motor1Pin = 4; // Motor driver 1 leg 1 (pin 4, AIN1)
-const int motor2Pin = 5; // Motor driver 1 leg 2 (pin 5, AIN2)
-const int motor3Pin = 7; // Motor driver 2 leg 1 (pin 7, AIN1)
-const int motor4Pin = 8; // Motor driver 2 leg 2 (pin 8, AIN2)
-// const int pwm1Pin = 2;      // Motor driver PWM pin
-// const int pwm2Pin = 3;      // Motor driver PWM pin
+const int motor1Pin = 5; // Motor driver 1 leg 1 (AI1)
+const int motor2Pin = 4; // Motor driver 1 leg 2 (AI2)
+const int motor3Pin = 6; // Motor driver 2 leg 1 (BI1)
+const int motor4Pin = 7; // Motor driver 2 leg 2 (BI2)
+const int pwmAPin = 2;   // Motor driver PWM pin
+const int pwmBPin = 3;   // Motor driver PWM pin
 const int valvePin = 12; // Valve pin
 
 int stage = 1;
@@ -21,8 +21,8 @@ void setup() {
   pinMode(motor2Pin, OUTPUT);
   pinMode(motor3Pin, OUTPUT);
   pinMode(motor4Pin, OUTPUT);
-  // pinMode(pwm1Pin, OUTPUT);
-  // pinMode(pwm2Pin, OUTPUT);
+  pinMode(pwmAPin, OUTPUT);
+  pinMode(pwmBPin, OUTPUT);
 
   // set PWM enable pins high so that motors can turn on:
   // analogWrite(pwm1Pin, 1023);
@@ -73,8 +73,8 @@ void loop() {
     digitalWrite(motor4Pin, LOW);
 
     digitalWrite(valvePin, HIGH);
-    // digitalWrite(pwm1Pin, LOW);
-    // digitalWrite(pwm2Pin, HIGH);
+    digitalWrite(pwmAPin, HIGH);
+    digitalWrite(pwmBPin, LOW);
     delay(5000); // 10 seconds
     // stage = 2;
     // Serial.println("Stage 2 next");
@@ -88,8 +88,8 @@ void loop() {
     digitalWrite(motor2Pin, LOW);
     digitalWrite(motor3Pin, LOW);
     digitalWrite(motor4Pin, HIGH);
-    // digitalWrite(pwm1Pin, HIGH);
-    // digitalWrite(pwm2Pin, LOW);
+    digitalWrite(pwmAPin, LOW);
+    digitalWrite(pwmBPin, HIGH);
     delay(5000); // 10 seconds
   }
 }

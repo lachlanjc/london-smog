@@ -5,7 +5,7 @@ import starlight from "@astrojs/starlight";
 export default defineConfig({
   integrations: [
     starlight({
-      title: "London Haze",
+      title: "London Smog",
       social: {
         github: "https://github.com/lachlanjc/wearable-air-quality",
       },
