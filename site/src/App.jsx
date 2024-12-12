@@ -54,13 +54,14 @@ function Button({ onClick, children }) {
 }
 
 function Slide({ index, setSlide, children }) {
-  const { ref, inView } = useInView({ threshold: 1 });
-
-  useEffect(() => {
-    if (inView) {
-      setSlide(index);
-    }
-  }, [inView, setSlide, index]);
+  const { ref, inView } = useInView({
+    threshold: 1,
+    onChange: (inView) => {
+      if (inView) {
+        setSlide(index);
+      }
+    },
+  });
 
   return (
     <div
@@ -73,13 +74,12 @@ function Slide({ index, setSlide, children }) {
   );
 }
 
-const numSlides = 9;
+const numSlides = 8;
 
 export default function App() {
   const [activeSlide, setActiveSlide] = useState(1);
   // const [playBite] = useSound("/bite.mp3");
-  // const broadcast = useBroadcastEvent();
-  //
+
   useEffect(() => {
     broadcast(activeSlide);
   }, [activeSlide]);

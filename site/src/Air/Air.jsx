@@ -19,6 +19,10 @@ export default function Air() {
           infiltrate the respiratory system – has been strongly linked to
           negative health impacts and premature death.
         </p>
+        <p>
+          <span className="text-[var(--color-avocado-500)]">12 μg/m³</span> is
+          the maximum WHO-compliant SPM level.
+        </p>
       </article>
       <div className="container mx-auto">
         <Viz />

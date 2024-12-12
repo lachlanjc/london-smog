@@ -6,6 +6,7 @@ import {
   CartesianGrid,
   XAxis,
   YAxis,
+  ReferenceLine,
 } from "recharts";
 import chartData from "../../public/london.json";
 import NumberFlow from "@number-flow/react";
@@ -37,7 +38,7 @@ export default function Viz() {
     <>
       <div>
         {/* <NumberFlowGroup> */}
-        <span className="text-6xl font-bold text-center block mb-4 tabular-nums text-white">
+        <span className="text-6xl text-center block mb-4 tabular-nums text-white">
           <NumberFlow
             value={Math.round(currentValue[0])}
             format={{
@@ -51,17 +52,19 @@ export default function Viz() {
             }}
           />
           {": "}
-          <NumberFlow
-            value={Math.round(currentValue[1])}
-            continuous
-            style={{
-              "--number-flow-mask-width": "3ch",
-              width: "3ch",
-              textAlign: "right",
-              justifyContent: "end",
-            }}
-          />{" "}
-          SPM
+          <strong className="font-bold">
+            <NumberFlow
+              value={Math.round(currentValue[1])}
+              continuous
+              style={{
+                "--number-flow-mask-width": "3ch",
+                width: "3ch",
+                textAlign: "right",
+                justifyContent: "end",
+              }}
+            />{" "}
+            SPM
+          </strong>
         </span>
         {/* </NumberFlowGroup> */}
       </div>
@@ -89,6 +92,15 @@ export default function Viz() {
           <CartesianGrid horizontal={false} opacity={0.25} />
           <XAxis dataKey="year" axisLine={false} minTickGap={24} />
           <YAxis domain={[0, 620]} />
+          <ReferenceLine
+            y={12}
+            // label={{
+            //   value: "Healthy SPM",
+            //   position: "centerTop",
+            // }}
+            stroke="var(--color-avocado-500)"
+            strokeWidth={2}
+          />
           <Area
             type="monotone"
             dataKey="spm"
