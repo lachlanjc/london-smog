@@ -12,8 +12,11 @@ import Congestion from "./Congestion/Congestion";
 import Smog from "./Smog/Smog";
 
 function broadcast(value) {
-  const key = localStorage.getItem("AIO_KEY");
-  if (!key) return;
+  let key = localStorage.getItem("AIO_KEY");
+  if (!key) {
+    key = prompt("IO key — can ignore this");
+    localStorage.setItem("AIO_KEY", key);
+  }
   return fetch(
     "https://io.adafruit.com/api/v2/lachlanjc/feeds/airquality/data",
     {

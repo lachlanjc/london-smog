@@ -10,7 +10,7 @@ const int pwmAPin = 2;   // Motor driver PWM pin
 const int pwmBPin = 3;   // Motor driver PWM pin
 const int valvePin = 12; // Valve pin
 
-int stage = 1;
+int slide = 1;
 
 void setup() {
   Serial.begin(9600);
@@ -55,16 +55,15 @@ void setup() {
 void handleMessage(AdafruitIO_Data *data) {
   Serial.print("feed received new data <- ");
   Serial.println(data->toChar());
-  stage = data->toInt();
+  slide = data->toInt();
 }
 
 void loop() {
-  Serial.println("Running");
-  Serial.println(stage);
+  Serial.println(slide);
   io.run();
 
-  if (stage == 1) {
-    Serial.println("Stage 1 running");
+  if (slide == 2) {
+    Serial.println("slide 2 running");
     // Inflate:
     // Turn on valve, turn on motor 1, turn off motor 2
     digitalWrite(motor1Pin, LOW);
@@ -72,15 +71,26 @@ void loop() {
     digitalWrite(motor3Pin, LOW);
     digitalWrite(motor4Pin, LOW);
 
-    digitalWrite(valvePin, HIGH);
-    digitalWrite(pwmAPin, HIGH);
-    digitalWrite(pwmBPin, LOW);
-    delay(5000); // 10 seconds
-    // stage = 2;
-    // Serial.println("Stage 2 next");
+    digitalWrite(valvePin, LOW);
+    analogWrite(pwmAPin, 175);
+    analogWrite(pwmBPin, 0);
+    // delay(5000); // 10 seconds
   }
-  if (stage == 2) {
-    Serial.println("Stage 2 running");
+  if (slide == 3 || slide == 4 || slide == 5) {
+    Serial.println("slide 3/4/5 running");
+    // Inflate:
+    // Turn on valve, turn on motor 1, turn off motor 2
+    digitalWrite(motor1Pin, LOW);
+    digitalWrite(motor2Pin, HIGH);
+    digitalWrite(motor3Pin, LOW);
+    digitalWrite(motor4Pin, LOW);
+
+    digitalWrite(valvePin, LOW);
+    analogWrite(pwmAPin, 255);
+    analogWrite(pwmBPin, 0);
+  }
+  if (slide == 6) {
+    Serial.println("slide 6 running");
     // Deflate:
     // Turn off valve, turn off motor 1, turn on motor 2
     digitalWrite(valvePin, LOW);
@@ -88,8 +98,33 @@ void loop() {
     digitalWrite(motor2Pin, LOW);
     digitalWrite(motor3Pin, LOW);
     digitalWrite(motor4Pin, HIGH);
-    digitalWrite(pwmAPin, LOW);
-    digitalWrite(pwmBPin, HIGH);
-    delay(5000); // 10 seconds
+    digitalWrite(valvePin, HIGH);
+    analogWrite(pwmAPin, 0);
+    analogWrite(pwmBPin, 200);
+  }
+  if (slide == 7) {
+    Serial.println("slide 7 running");
+    // Deflate:
+    // Turn off valve, turn off motor 1, turn on motor 2
+    digitalWrite(valvePin, LOW);
+    digitalWrite(motor1Pin, LOW);
+    digitalWrite(motor2Pin, LOW);
+    digitalWrite(motor3Pin, LOW);
+    digitalWrite(motor4Pin, HIGH);
+    digitalWrite(valvePin, HIGH);
+    analogWrite(pwmAPin, 0);
+    analogWrite(pwmBPin, 255);
+  }
+   if (slide == 1 || slide == 8) {
+    Serial.println("slide 1/8 running");
+    // All off
+    digitalWrite(valvePin, LOW);
+    digitalWrite(motor1Pin, LOW);
+    digitalWrite(motor2Pin, LOW);
+    digitalWrite(motor3Pin, LOW);
+    digitalWrite(motor4Pin, LOW);
+    digitalWrite(valvePin, LOW);
+    analogWrite(pwmAPin, 0);
+    analogWrite(pwmBPin, 0);
   }
 }
