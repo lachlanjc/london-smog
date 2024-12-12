@@ -67,8 +67,13 @@
 
   --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
   --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
+}
 
-  /* ... */
+#root {
+  overflow-y: hidden;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -81,8 +86,6 @@ body {
   width: 100%;
   background-color: #000;
   color: #fff;
-  display: grid;
-  place-content: center;
 }
 
 .intro p {

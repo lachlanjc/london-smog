@@ -2,7 +2,7 @@ import population from "./population.jpg";
 
 export default function Solutions() {
   return (
-    <section className="max-w-screen relative">
+    <section className="relative">
       <article className="intro container mx-auto flex flex-col justify-start gap-10 py-24 text-3xl leading-10 tracking-tight text-white">
         <p>
           Air pollution levels in London today are almost 40-times lower than

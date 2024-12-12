@@ -15,12 +15,6 @@ export default function Intro() {
           height={3989}
         />
       </header>
-      <article className="intro container mx-auto flex flex-col gap-10 py-24 text-3xl leading-10 tracking-tight text-white">
-        <p>
-          Cities in most high-income countries have relatively low levels of
-          local air pollution. This, however, hasn’t always been the case.
-        </p>
-      </article>
     </section>
   );
 }

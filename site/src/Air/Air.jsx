@@ -7,6 +7,10 @@ export default function Air() {
     <section>
       <article className="intro container mx-auto flex flex-col gap-10 py-24 text-3xl leading-10 tracking-tight text-white">
         <p>
+          Cities in most high-income countries have relatively low levels of
+          local air pollution. This, however, hasn’t always been the case.
+        </p>
+        <p>
           Here are the average levels of{" "}
           <strong>suspended particulate matter (SPM)</strong> in London’s air
           from 1700 to 2016. SPM refers to fine solid or liquid particles

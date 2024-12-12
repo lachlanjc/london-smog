@@ -23,7 +23,7 @@ const STATUS_KEYS = Object.keys(STATUS_COLORS);
 const initialViewState = {
   latitude: 51.5074,
   longitude: -0.1278,
-  zoom: 9,
+  zoom: 11,
   bearing: 0,
   pitch: 20,
 };
@@ -101,7 +101,7 @@ export default function Stations() {
           </p>
         </div>
         <div
-          className="absolute top-12 right-12 flex flex-col gap-2 text-white bg-black/25 transition-opacity [transition-duration:0.25s] rounded-lg p-6 w-md"
+          className="absolute bottom-12 left-12 flex flex-col gap-2 text-white bg-black/25 transition-opacity [transition-duration:0.25s] rounded-lg p-6 w-md"
           style={{ opacity: activeStation.name === emptyStation.name ? 0 : 1 }}
         >
           <header className="flex gap-2 items-start justify-start">
@@ -171,18 +171,19 @@ export default function Stations() {
         </div>
 
         <div
-          className="absolute bottom-12 left-12 flex flex-col gap-3 text-white"
+          className="absolute bottom-12 right-12 flex flex-col gap-3 text-white"
           aria-hidden
         >
           <dl>
-            {Object.keys(STATUS_COLORS).map((status, i) => (
-              <div className={`flex items-center gap-2`}>
-                <div
-                  className={`h-4 w-4 rounded-full bg-${
-                    STATUS_COLORS[status] // as keyof typeof STATUS_COLORS]
-                  }`}
-                />
+            {Object.keys(STATUS_COLORS).map((status) => (
+              <div
+                className={`flex items-center justify-end gap-2`}
+                key={status}
+              >
                 <dd className="capitalize">{status.replace("-", " ")}</dd>
+                <div
+                  className={`h-4 w-4 rounded-full bg-${STATUS_COLORS[status]}`}
+                />
               </div>
             ))}
           </dl>
