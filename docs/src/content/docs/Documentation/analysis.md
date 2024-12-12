@@ -6,39 +6,21 @@ description: Evergreen
 **Communication:**
 
 - What is your piece communicating?
-- Who are you communicating to?
-- What tools (gesture, color, text, audio, LEDs, movement, ect.) are you using to communicate your message?
-- Is there a reaction you aim to receive? If so, what is that reaction?
 
-**Interaction:**
+  - Who are you communicating to/with? (Yourself, someone in particular, a group of people, an animal, the computer, etc.)
 
-- Were you able to test your interaction with others? What was the process and outcome?
-- What is your desired interaction?
+  - How does your piece communicate?
 
-**Social Design Framework: Response**
+    - What tools (gesture, color, text, audio, LEDs, movement, ect.) are you using to communicate your message?
 
-- Do a review of your piece according to the Design Framework for Social Wearables. If there are areas that have not been fully worked out, use the prompts (questions) to do so at this point.
-- Framework and Questions to Answer:
-- Sensing:
-  - How is the device activated?
-  - What is being sensed?
-- Actuating:
-  - What is the output?
-  - Is it noticeable or not?
-- Sensing-Actuating Interplay:
-  - What is the interplay between sensing and actuating?
-  - How transparent is this to the wearer and others?
-- Sensing-Actuating Interplay between Wearables:
-  - How many devices are there?
-  - What is the interplay between them?
-- Personal and Social Requirements:
-  - What are the personal and social commitments that the wearables require? E.g. What degree of focused attention is required from the wearer and others?
-- Social Acceptability
-  - In what social environment the interaction occurs?
+  - What is the desired reaction you are aiming for with this piece?
 
-**Future Work/Next Steps:**
+    - How did what you aimed to communicate change over the process?
 
-This is your place to talk about what you would like to work on next.
+- Discuss what your piece communicates to the outside world other than your target audience. Try to step outside yourself for this exercise.
 
-- What were you not able to fully explore in the time we had?
-- What would you like to do differently in order to get closer to the desired outcome?
+  - If you saw someone wearing your piece, what would you think? What draws your eye first?
+
+- What senses does your piece activate in those around you? (Sight, hearing, smell, taste, touch)
+
+  - How might you utilize an additional sensory modality to improve how your piece communicates?
