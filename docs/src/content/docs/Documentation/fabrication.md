@@ -9,7 +9,7 @@ description: Evergreen
 
 ## Circuit diagram
 
-<iframe height="720" width="720" allowfullscreen frameBorder="0" src="https://www.flux.ai/lachlanjcnyu/air-quality-pillow-pump?embed=1&editor=schematic" style="aspect-ratio: 1 / 1"></iframe>
+<iframe height="720" width="720" allowfullscreen frameBorder="0" src="https://www.flux.ai/lachlanjcnyu/london-smog?embed=1&editor=schematic" style="aspect-ratio: 1 / 1"></iframe>
 
 ## Component datasheets
 
