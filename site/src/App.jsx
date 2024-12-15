@@ -75,12 +75,6 @@ export default function App() {
 
   return (
     <div className="flex w-[900vw]">
-      <input
-        onBlur={(e) => localStorage.setItem("AIO_KEY", e.currentTarget.value)}
-        className="fixed z-4 top-12 left-2"
-        type="text"
-        placeholder="-"
-      />
       <button
         className="fixed z-4 top-2 left-2 p-5 cursor-pointer leading-none text-lg"
         onDoubleClick={() => setBroadcasting((b) => !b)}
