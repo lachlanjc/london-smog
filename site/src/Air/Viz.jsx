@@ -12,12 +12,6 @@ import chartData from "../../public/london.json";
 import NumberFlow from "@number-flow/react";
 
 export default function Viz() {
-  const minSpm = chartData
-    .map((item) => item.spm)
-    .reduce((a, b) => Math.min(a, b));
-  const maxSpm = chartData
-    .map((item) => item.spm)
-    .reduce((a, b) => Math.max(a, b));
   const lastSpm = chartData.at(-1).spm;
 
   const [currentValue, setCurrentValue] = React.useState([
@@ -90,7 +84,11 @@ export default function Viz() {
             </linearGradient>
           </defs>
           <CartesianGrid horizontal={false} opacity={0.25} />
-          <XAxis dataKey="year" axisLine={false} minTickGap={24} />
+          <XAxis
+            dataKey="year"
+            axisLine={false}
+            minTickGap={24}
+          />
           <YAxis domain={[0, 620]} />
           <ReferenceLine
             y={12}
@@ -113,6 +111,7 @@ export default function Viz() {
           />
         </AreaChart>
       </ResponsiveContainer>
+      <div className="h-16" />
     </>
   );
 }

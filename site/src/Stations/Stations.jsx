@@ -2,6 +2,8 @@ import { useRef, useState, useEffect } from "react";
 import stations from "./stations.json";
 import NumberFlow from "@number-flow/react";
 import Map, { Marker } from "react-map-gl";
+import battersea from "./battersea.jpg";
+import bankside from "./bankside.jpg";
 
 const MAPBOX_TOKEN =
   "pk.eyJ1IjoiaGFja2NsdWIiLCJhIjoiY2pscGI1eGdhMGRyNzN3bnZvbGY5NDBvZSJ9.Zm4Zduj94TrgU8h890M7gA";
@@ -74,11 +76,15 @@ export default function Stations() {
             style={{ position: "relative" }}
           >
             <div
-              className={`h-6 w-6 rounded-full opacity-75 bg-${
+              className={`h-8 w-8 rounded-full opacity-75 bg-${
                 STATUS_COLORS[marker["type"]]
               }`}
               style={{
-                transform: `scale(${typeof Number(marker.mw) === "number" ? Number(marker.mw) / 100 : 1})`,
+                scale: `${
+                  typeof Number(marker.mw) === "number"
+                    ? Number(marker.mw) / 100
+                    : 1
+                }`,
               }}
               title={marker.name}
               onMouseEnter={() => setActiveStation(marker)}
@@ -96,8 +102,8 @@ export default function Stations() {
             <strong className="font-bold">
               thirty coal power plants polluted
             </strong>{" "}
-            London—not including the factories and every house burning more
-            coal.
+            London—not including the railroads, factories, boats, and every
+            house burning more coal.
           </p>
         </div>
         <div
@@ -106,10 +112,19 @@ export default function Stations() {
         >
           {activeStation.name === "Battersea" && (
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Battersea_Power_Station_from_the_river.jpg/1024px-Battersea_Power_Station_from_the_river.jpg"
+              src={battersea}
               width={1024}
               height={683}
               alt="Battersea Power Station"
+              className="mb-2 rounded-sm"
+            />
+          )}
+          {activeStation.name === "Bankside" && (
+            <img
+              src={bankside}
+              width={676}
+              height={450}
+              alt="Bankside Power Station"
               className="mb-2 rounded-sm"
             />
           )}

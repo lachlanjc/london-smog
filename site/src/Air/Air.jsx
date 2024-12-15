@@ -8,20 +8,22 @@ export default function Air() {
       <article className="intro container mx-auto flex flex-col gap-10 py-24 text-3xl leading-10 tracking-tight text-white">
         <p>
           Cities in most high-income countries have relatively low levels of
-          local air pollution. This, however, hasn’t always been the case.
+          local air pollution. This hasn’t always been true—look at London.
         </p>
         <p>
           Here are the average levels of{" "}
           <strong>suspended particulate matter (SPM)</strong> in London’s air
-          from 1700 to 2016. SPM refers to fine solid or liquid particles
-          suspended in Earth’s atmosphere (such as soot, smoke, dust, and
-          pollen). Exposure to SPM – especially very small particles, which
-          infiltrate the respiratory system – has been strongly linked to
-          negative health impacts and premature death.
+          from 1700 to 2016. SPM refers to fine particles suspended in the
+          atmosphere, such as soot, smoke, dust, and pollen. Exposure to high
+          SPM—especially very small particles, which infiltrate the respiratory
+          system—has been strongly linked to negative health impacts and
+          premature death.
         </p>
         <p>
-          <span className="text-[var(--color-avocado-500)]">12 μg/m³</span> is
-          the maximum WHO-compliant SPM level.
+          By 1891, SPM levels had risen to over{" "}
+          <span className="text-accent">600 μg/m³.</span> The&nbsp;WHO’s
+          recommended maximum:{" "}
+          <span className="text-[var(--color-avocado-500)]">12 μg/m³</span>.
         </p>
       </article>
       <div className="container mx-auto">

@@ -13,7 +13,7 @@ export default function Closure() {
       <img
         src={hero}
         alt="Landscape of coal plant and yard"
-        className="w-full"
+        className="w-full object-cover aspect-video"
         width={3800}
         height={2282}
       />

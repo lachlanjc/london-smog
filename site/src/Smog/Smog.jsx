@@ -6,14 +6,23 @@ export default function Smog() {
   return (
     <section>
       <article className="intro container mx-auto flex flex-col gap-10 py-24 text-3xl leading-10 tracking-tight text-white">
-        <p className="border-l border-l-accent border-l-8 pl-8 ">
-          “London experienced frequent and severe fogs. Such fogs were often so
-          dense that they halted railway journeys, interrupted general economic
-          activities, and even contributed to London becoming a breeding ground
-          for crime (crime rates rose sharply during these fog periods). London
-          averaged 80 dense fog days per year, with some areas recording up to
-          180 in 1885.”
-        </p>
+        <blockquote className="border-l-accent border-l-8 pl-8">
+          <p>
+            “London experienced frequent and severe fogs. Such fogs were often
+            so dense that they halted railway journeys, interrupted general
+            economic activities, and even contributed to London becoming a
+            breeding ground for crime (crime rates rose sharply during these fog
+            periods). London averaged 80 dense fog days per year, with some
+            areas recording up to 180 in 1885.”
+          </p>
+          <p className="mt-4 text-xl opacity-75">
+            <cite>
+              <a href="https://ourworldindata.org/london-air-pollution">
+                — Hannah Ritchie, Our World in Data
+              </a>
+            </cite>
+          </p>
+        </blockquote>
         <p>
           Pollution came to a breaking point. In the{" "}
           <strong>“Great&nbsp;Smog of 1952,”</strong> an estimated 12,000 people

@@ -101,6 +101,15 @@ body {
   font-weight: 600;
 }
 
+footer a {
+  text-decoration: underline;
+  text-decoration-color: hsl(0 0% 100% / 0.5);
+}
+footer p,
+footer li {
+  text-wrap: pretty;
+}
+
 h1 {
   -webkit-text-fill-color: currentColor;
   -webkit-text-stroke-width: 5px;

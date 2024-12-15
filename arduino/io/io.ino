@@ -23,11 +23,6 @@ void setup() {
   pinMode(motor4Pin, OUTPUT);
   pinMode(pwmAPin, OUTPUT);
   pinMode(pwmBPin, OUTPUT);
-
-  // set PWM enable pins high so that motors can turn on:
-  // analogWrite(pwm1Pin, 1023);
-  // analogWrite(pwm2Pin, 1023);
-
   pinMode(valvePin, OUTPUT);
 
   Serial.print("Connecting to Adafruit IO");
@@ -38,11 +33,9 @@ void setup() {
 
   // wait for a connection
   while (io.status() < AIO_CONNECTED) {
-    digitalWrite(LED_BUILTIN,
-                 HIGH); // turn the LED on (HIGH is the voltage level)
-    delay(500);         // wait for a second
-    digitalWrite(LED_BUILTIN,
-                 LOW); // turn the LED off by making the voltage LOW
+    digitalWrite(LED_BUILTIN, HIGH);
+    delay(250);
+    digitalWrite(LED_BUILTIN, LOW);
     delay(500);
   }
 
@@ -59,7 +52,6 @@ void handleMessage(AdafruitIO_Data *data) {
 }
 
 void loop() {
-  Serial.println(slide);
   io.run();
 
   if (slide == 2) {
@@ -72,12 +64,24 @@ void loop() {
     digitalWrite(motor4Pin, LOW);
 
     digitalWrite(valvePin, LOW);
-    analogWrite(pwmAPin, 175);
+    analogWrite(pwmAPin, 185);
     analogWrite(pwmBPin, 0);
-    // delay(5000); // 10 seconds
   }
-  if (slide == 3 || slide == 4 || slide == 5) {
-    Serial.println("slide 3/4/5 running");
+  if (slide == 3 || slide == 4) {
+    Serial.println("slide 3/4 running");
+    // Inflate:
+    // Turn on valve, turn on motor 1, turn off motor 2
+    digitalWrite(motor1Pin, LOW);
+    digitalWrite(motor2Pin, HIGH);
+    digitalWrite(motor3Pin, LOW);
+    digitalWrite(motor4Pin, LOW);
+
+    digitalWrite(valvePin, LOW);
+    analogWrite(pwmAPin, 225);
+    analogWrite(pwmBPin, 0);
+  }
+  if (slide == 5) {
+    Serial.println("slide 5 running");
     // Inflate:
     // Turn on valve, turn on motor 1, turn off motor 2
     digitalWrite(motor1Pin, LOW);
@@ -89,20 +93,7 @@ void loop() {
     analogWrite(pwmAPin, 255);
     analogWrite(pwmBPin, 0);
   }
-  if (slide == 6) {
-    Serial.println("slide 6 running");
-    // Deflate:
-    // Turn off valve, turn off motor 1, turn on motor 2
-    digitalWrite(valvePin, LOW);
-    digitalWrite(motor1Pin, LOW);
-    digitalWrite(motor2Pin, LOW);
-    digitalWrite(motor3Pin, LOW);
-    digitalWrite(motor4Pin, HIGH);
-    digitalWrite(valvePin, HIGH);
-    analogWrite(pwmAPin, 0);
-    analogWrite(pwmBPin, 200);
-  }
-  if (slide == 7) {
+  if (slide == 6 || slide == 7) {
     Serial.println("slide 7 running");
     // Deflate:
     // Turn off valve, turn off motor 1, turn on motor 2
@@ -115,8 +106,21 @@ void loop() {
     analogWrite(pwmAPin, 0);
     analogWrite(pwmBPin, 255);
   }
-   if (slide == 1 || slide == 8) {
-    Serial.println("slide 1/8 running");
+  if (slide == 8) {
+    Serial.println("slide 8 running");
+    // Deflate:
+    // Turn off valve, turn off motor 1, turn on motor 2
+    digitalWrite(valvePin, LOW);
+    digitalWrite(motor1Pin, LOW);
+    digitalWrite(motor2Pin, LOW);
+    digitalWrite(motor3Pin, LOW);
+    digitalWrite(motor4Pin, HIGH);
+    digitalWrite(valvePin, HIGH);
+    analogWrite(pwmAPin, 0);
+    analogWrite(pwmBPin, 200);
+  }
+   if (slide == 1 || slide == 9) {
+    Serial.println("slide 1/9 running");
     // All off
     digitalWrite(valvePin, LOW);
     digitalWrite(motor1Pin, LOW);
