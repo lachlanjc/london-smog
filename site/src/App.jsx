@@ -41,9 +41,7 @@ function Slide({ index, setSlide, children }) {
     threshold: 1,
     onChange: (inView) => {
       if (inView) {
-        console.log(index);
         setSlide(index);
-        broadcast(index);
       }
     },
   });
@@ -63,10 +61,26 @@ const numSlides = 8;
 
 export default function App() {
   const [activeSlide, setActiveSlide] = useState(1);
+  const [broadcasting, setBroadcasting] = useState(true);
   // const [playBite] = useSound("/bite.mp3");
+
+  const onActiveSlideChanged = (index) => {
+    console.log("broadcasting", broadcasting);
+    if (broadcasting) {
+      console.log(index);
+      setActiveSlide(index);
+      broadcast(index);
+    }
+  };
 
   return (
     <div className="flex w-[900vw]">
+      <button
+        className="fixed z-4 top-2 left-2 p-5 cursor-pointer leading-none text-lg"
+        onDoubleClick={() => setBroadcasting((b) => !b)}
+      >
+        {!broadcasting ? "•" : null}
+      </button>
       <button
         title="Previous slide"
         disabled={activeSlide === 1}
@@ -114,34 +128,34 @@ export default function App() {
         </svg>
       </button>
       {/* <Map /> */}
-      <Slide index={1} setSlide={setActiveSlide}>
+      <Slide index={1} setSlide={onActiveSlideChanged}>
         <Intro />
       </Slide>
       {/* <div className="-mt-12 -mb-12 container mx-auto relative z-1">
         <Button onClick={() => broadcast(1)}>Experience it firsthand</Button>
       </div> */}
-      <Slide index={2} setSlide={setActiveSlide}>
+      <Slide index={2} setSlide={onActiveSlideChanged}>
         <Air />
       </Slide>
-      <Slide index={3} setSlide={setActiveSlide}>
+      <Slide index={3} setSlide={onActiveSlideChanged}>
         <Coal />
       </Slide>
-      <Slide index={4} setSlide={setActiveSlide}>
+      <Slide index={4} setSlide={onActiveSlideChanged}>
         <Stations />
       </Slide>
-      <Slide index={5} setSlide={setActiveSlide}>
+      <Slide index={5} setSlide={onActiveSlideChanged}>
         <Smog />
       </Slide>
-      <Slide index={6} setSlide={setActiveSlide}>
+      <Slide index={6} setSlide={onActiveSlideChanged}>
         <Solutions />
       </Slide>
-      <Slide index={7} setSlide={setActiveSlide}>
+      <Slide index={7} setSlide={onActiveSlideChanged}>
         <Congestion />
       </Slide>
-      <Slide index={8} setSlide={setActiveSlide}>
+      <Slide index={8} setSlide={onActiveSlideChanged}>
         <Closure />
       </Slide>
-      <Slide index={9} setSlide={setActiveSlide}>
+      <Slide index={9} setSlide={onActiveSlideChanged}>
         <Sources />
       </Slide>
     </div>
