@@ -29,9 +29,7 @@ export default function Solutions() {
             width="512"
             height="680"
             frameBorder="0"
-            webkitAllowFullscreen
-            mozAllowFullscreen
-            allowFullscreen
+            allowFullScreen
             loading="lazy"
           />
         </details>
