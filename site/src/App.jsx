@@ -57,7 +57,7 @@ function Slide({ index, setSlide, children }) {
   );
 }
 
-const numSlides = 8;
+const numSlides = 9;
 
 export default function App() {
   const [activeSlide, setActiveSlide] = useState(1);
@@ -75,11 +75,17 @@ export default function App() {
 
   return (
     <div className="flex w-[900vw]">
+      <input
+        onBlur={(e) => localStorage.setItem("AIO_KEY", e.currentTarget.value)}
+        className="fixed z-4 top-12 left-2"
+        type="text"
+        placeholder="-"
+      />
       <button
         className="fixed z-4 top-2 left-2 p-5 cursor-pointer leading-none text-lg"
         onDoubleClick={() => setBroadcasting((b) => !b)}
       >
-        {!broadcasting ? "•" : null}
+        {broadcasting ? null : "•"}
       </button>
       <button
         title="Previous slide"
@@ -127,13 +133,9 @@ export default function App() {
           />
         </svg>
       </button>
-      {/* <Map /> */}
       <Slide index={1} setSlide={onActiveSlideChanged}>
         <Intro />
       </Slide>
-      {/* <div className="-mt-12 -mb-12 container mx-auto relative z-1">
-        <Button onClick={() => broadcast(1)}>Experience it firsthand</Button>
-      </div> */}
       <Slide index={2} setSlide={onActiveSlideChanged}>
         <Air />
       </Slide>
