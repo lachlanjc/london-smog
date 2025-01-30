@@ -13,6 +13,7 @@ import Smog from "./Smog/Smog";
 import Sources from "./Sources/Sources";
 
 async function broadcast(value) {
+  return false; // disabling this for archiving project
   let key = localStorage.getItem("AIO_KEY");
   if (!key) {
     key = prompt("IO key — can ignore this");
